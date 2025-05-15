@@ -1,17 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Sneak Peek</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sneak Peek – Resurgifi™</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at center, #1a1c2b 0%, #2b2e3c 100%);
+      color: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 700px;
+      width: 100%;
+    }
+
+    .grace-img {
+      width: 150px;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem 0;
+      color: #5ac8fa;
+    }
+
+    p {
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem 0;
+    }
+
+    li {
+      font-size: 1.1rem;
+      margin: 0.75rem 0;
+      position: relative;
+      padding-left: 1.75rem;
+    }
+
+    li::before {
+      content: "🌟";
+      position: absolute;
+      left: 0;
+    }
+
+    a.button {
+      color: #5ac8fa;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #5ac8fa;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+      display: inline-block;
+      margin: 1rem;
+    }
+
+    a.button:hover {
+      background: #5ac8fa;
+      color: #000;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    input, textarea {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      background: #5ac8fa;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #339edc;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p, li {
+        font-size: 1rem;
+      }
+
+      .grace-img {
+        width: 120px;
+        margin-bottom: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Sneak Peek at What’s Coming</h1>
-  <p>You’re early — and that matters. Here’s a look at what we’re building for the first 25.</p>
-  <ul>
-    <li>Interactive Hero Circles</li>
-    <li>Journaling with AI feedback</li>
-    <li>Voice-guided calming modes</li>
-    <li>Creator-only reflections and unlockables</li>
-  </ul>
-  <a href="/">← Back to Home</a>
+  <div class="container">
+    <img src="{{ url_for('static', filename='photos/grace/gracephone.png') }}" alt="Grace – The Light Within" class="grace-img">
+    
+    <h1>You're Early — That Matters</h1>
+    <p>
+      Not everyone finds this place. But you did. And before we open the doors to the world, here’s what’s brewing in the heart of Resurgifi:
+    </p>
+
+    <ul>
+      <li>Interactive Hero Circles that feel like real group threads</li>
+      <li>Journaling that listens and reflects back with clarity</li>
+      <li>Voice-guided modes for calm, clarity, and emotional resets</li>
+      <li>Journey selection based on your path — grief, anxiety, trauma, addiction, or self-reconnection</li>
+      <li>Growth-based reflections and hidden unlockables for users who stay the course</li>
+    </ul>
+
+    <h2>Be Part of the Founding</h2>
+    <p>
+      Help us shape the future of Resurgifi. You’ll get early access, behind-the-scenes updates, and a front-row seat to something healing and real.
+    </p>
+
+    <form action="http://localhost:5000/contact" method="POST">
+      <input type="text" name="name" placeholder="Your first name" required>
+      <input type="email" name="email" placeholder="Your email address" required>
+      <textarea name="message" placeholder="Why you want to join or anything you'd like to share (optional)"></textarea>
+      <button type="submit">Sign Me Up</button>
+    </form>
+
+    <a href="/" class="button">← Return to Safe Harbor</a>
+  </div>
 </body>
 </html>
+
+
